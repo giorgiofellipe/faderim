@@ -1,0 +1,73 @@
+<?php
+namespace Faderim\Reflection;
+class RelationalModel
+{
+
+    private $table;
+    private $package;
+    private $connection;
+    /**
+    * @var ReflectionPropertyAnotation[]
+    */
+    private $aCols = Array();
+
+    public function __construct(\Faderim\Core\BaseModel $oModel) {
+        $oReflection = new \ReflectionClass($oModel);
+        //parent::__construct($oReflection);
+        $this->parseCols($oReflection->getProperties());
+        $this->setInstance($oModel);
+    }
+
+
+    public function getAnnotations() {
+        return Array('table','package','connection');
+    }
+
+    public function setPackage($package) {
+        $this->package = $package;
+    }
+
+    public function getPackage() {
+        return $this->package;
+    }
+
+    public function setConnection($sConn) {
+        $this->connection = $sConn;
+    }
+
+    public function getConnection() {
+        return $this->connection;
+    }
+
+
+    private function parseCols($aProperties) {
+        foreach($aProperties as $propertiAtual) {
+            $this->aCols[] = new FaderimReflectionPropertyAnotation($propertiAtual);
+        }
+    }
+
+    public function getCols() {
+        return $this->aCols;
+    }
+
+    public function getColsName() {
+        $aCols = Array();
+        foreach($this->getCols() as $colAtual) {
+            $aCols[] = $colAtual->getColname();
+        }
+        return $aCols;
+    }
+
+    public function setTable($table) {
+        $this->table = $table;
+    }
+
+    public function getTable() {
+        return $this->table;
+    }
+
+    public function newDataStore() {
+        return new FaderimRelationalDataStore($this);
+    }
+
+}
