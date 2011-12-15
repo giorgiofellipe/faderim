@@ -1,0 +1,14 @@
+Faderim
+
+
+Fast Development Rick Method
+
+
+
+
+Static Factory
+Singleton
+Injeção de Dependecia
+DAo
+Crud
+

@@ -1,0 +1,9 @@
+<connection name="mysql">
+  <type>mysql</type>
+  <host>localhost</host>
+  <port>3306</port>
+  <user>root</user>
+  <password>123456</password>
+  <database>neilar</database>
+  <default>0</default>
+</connection>
