@@ -1,5 +1,6 @@
 <?php
 namespace Faderim\Framework\View;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.

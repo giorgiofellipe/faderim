@@ -13,7 +13,7 @@ class Index extends BaseViewHtml
 
     protected function getCssFiles()
     {
-        return Array(self::EXT_JS_DIR.'/resources/css/ext-all-gray');
+        return Array(self::EXT_JS_DIR.'/resources/css/ext-all');
     }
 
     protected function getJsFiles()
@@ -45,6 +45,8 @@ class Index extends BaseViewHtml
             $oTab->setRegion('center');
             $oTab->setMargins(0,0,5);
             $oTab->getLoader();
+            
+            $oTab->addChild(new SystemDefault('l'));
 /*
             $oForm = new \Faderim\Framework\View\SystemForm();
             $oTab->addChild($oForm);
@@ -66,55 +68,17 @@ class Index extends BaseViewHtml
             $oLoader = $oLateral->getLoader();
             $oLoader->setAutoLoad(true,'?p=index&a=data&pr=getDataMenu');
 
-            /*
-            $oSystems = \Faderim\Framework\Model\System::getStorage()->find();
-            foreach($oSystems as $ModelSystem) {
-
-                $oNew = new \Faderim\Ext\TreePanel('menu_system_'.$ModelSystem->getId());
-                $oNew->setTitle($ModelSystem->getName());
-                $oLateral->addChild($oNew);
-
-
-
-                $menus = \Faderim\Framework\Model\Menu::getStorage()->find()->filter('System.id', '=', $ModelSystem->getId());
-                foreach($menus as $MenuCurrent) {
-                    $oNew->getRoot()->newNode($MenuCurrent->getName());
-                }
-
-
-
-            }
-             *
-             */
             $oViewPort->addChild($oLateral);
             $oViewPort->addChild($oTab);
             $oViewPort->setLayout('border');
             echo $oViewPort->create();
             //echo $o->create();
             ?>
-                /*
-                selMod.addListener('select',function() {
-                    alert('oi');
-                })*/
+
         //var oT = Ext.create("TreePanel",{selModel:selMod,"name":"menu_system_wow","id":"menu_system_3","root":{id:'aaa',"text":"Root","children":[],"leaf":true},"title":"Sample System"});
                 var oTab = Ext.getCmp('tab_menu');
-                oTab.getLoader().load(Faderim.getObjectLoader('system', 'grid'));
-                /*
-                oTab.getLoader({ url: 'field.json',
-			renderer:'component'});
-    */
-                //.add(oT);
-                //console.log(oT.getSelectionModel());
-                    /*
-                oT.getSelectionModel().on('select',function() {
-                    alert('wow');
-                })
-            */
-
-                /*
-                 * on('select', function(selModel, record) {
-        if (record.get('leaf')) {
-                 */
+                //oTab.getLoader().load(Faderim.getObjectLoader('system', 'grid'));
+              
     });
     </script>
 

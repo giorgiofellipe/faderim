@@ -1,5 +1,6 @@
 <?php
 namespace Faderim\Framework\View;
+use Faderim\Ext\Field as Field;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -18,11 +19,15 @@ class SystemForm extends BaseViewForm
     }
     
     public function createComponents() {
-        $o = new \Faderim\Ext\Field\FormField('text','id','Código',true,5);
+        
+        $this->setTitle('Manutenção');
+        $o = new Field\FormField('number','id','Código',true,5);
+        $this->addChild($o);          
+        
+        $o = new Field\FormField('text','name','Nome',true,50);
         $this->addChild($o);        
-        $o = new \Faderim\Ext\Field\FormField('numeric','name','Nome',true,50);
-        $this->addChild($o);        
-        $o = new \Faderim\Ext\Field\FormField('text','descr','Descrição',true,50);
+        
+        $o = new Field\FormField('text','descr','Descrição',true,50);
         $this->addChild($o);                
     }    
 }
