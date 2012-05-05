@@ -46,7 +46,8 @@ class Index extends BaseViewHtml
             $oTab->setMargins(0,0,5);
             $oTab->getLoader();
             
-            $oTab->addChild(new SystemDefault('l'));
+            $oTab->addChild(new SystemDefault());
+            //$oTab->addChild(new SystemDefault('2'));
 /*
             $oForm = new \Faderim\Framework\View\SystemForm();
             $oTab->addChild($oForm);

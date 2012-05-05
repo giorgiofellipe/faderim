@@ -28,7 +28,4 @@ class SystemDefault extends \Faderim\Ext\Container {
         $oForm->setCollapsible(true);
         $oForm->setSplit(true);
     }
-
 }
-
-?>
