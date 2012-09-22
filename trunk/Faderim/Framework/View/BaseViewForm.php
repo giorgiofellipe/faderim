@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\View;
 
 /*
@@ -11,18 +12,14 @@ namespace Faderim\Framework\View;
  *
  * @author Ricardo
  */
-abstract class BaseViewForm extends \Faderim\Ext\FormPanel
-{
-    
-    final public function __construct()
-    {
+abstract class BaseViewForm extends \Faderim\Ext\FormPanel {
+
+    final public function __construct() {
         parent::__construct($this->getFormName());
         $this->createComponents();
     }
-    
-    abstract protected function getFormName();
-    
-    abstract protected function createComponents();
-    
-}
 
+    abstract protected function getFormName();
+
+    abstract protected function createComponents();
+}

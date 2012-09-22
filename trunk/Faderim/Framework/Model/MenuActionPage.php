@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Model;
 
 /*
@@ -12,10 +13,8 @@ namespace Faderim\Framework\Model;
  * @author Ricardo
  * @table faderim_menu_action_page
  */
-class MenuActionPage extends BaseModel
-{
-    
-    
+class MenuActionPage extends BaseModel {
+
     /**
      * @id true
      * @Join Action
@@ -27,7 +26,7 @@ class MenuActionPage extends BaseModel
      * @Join Page
      */
     protected $Page;
-    
+
     /**
      *
      * @id true
@@ -35,21 +34,17 @@ class MenuActionPage extends BaseModel
      */
     protected $Menu;
 
-
-    public function getAction()
-    {
+    public function getAction() {
         return $this->getJoin('Action');
     }
 
-    public function getPage()
-    {
+    public function getPage() {
         return $this->getJoin('Page');
     }
-    
+
     public function getMenu() {
         return $this->getJoin('Menu');
     }
-
 
 }
 

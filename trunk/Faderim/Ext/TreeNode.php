@@ -1,31 +1,25 @@
 <?php
-namespace Faderim\Ext;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace Faderim\Ext;
 
 /**
  * Description of TreeNode
  *
  * @author Ricardo
  */
-class TreeNode implements \Faderim\Json\JsonSerializable
-{
+class TreeNode implements \Faderim\Json\JsonSerializable {
+
     private $title;
     private $children = Array();
-    
-    public function __construct($title)
-    {
+
+    public function __construct($title) {
         $this->title = $title;
     }
-    
+
     public function addNode(TreeNode $oNode) {
-        $this->children[] = $oNode;    
+        $this->children[] = $oNode;
     }
-    
-    
+
     /**
      *
      * @param type $sTitle
@@ -36,16 +30,14 @@ class TreeNode implements \Faderim\Json\JsonSerializable
         $this->addNode($oChild);
         return $oChild;
     }
-    
-    
-   public function getJsonFormat()
-   {
-       return Array(                      
-                    'text'=>$this->title,
-                    'children'=>$this->children,
-                    'leaf'=>(count($this->children)==0)
-                   );
-   }
-}
 
+    public function getJsonFormat() {
+        return Array(
+            'text' => $this->title,
+            'children' => $this->children,
+            'leaf' => (count($this->children) == 0)
+        );
+    }
+
+}
 

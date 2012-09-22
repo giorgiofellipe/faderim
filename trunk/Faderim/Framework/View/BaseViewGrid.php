@@ -1,5 +1,7 @@
 <?php
+
 namespace Faderim\Framework\View;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,19 +12,16 @@ namespace Faderim\Framework\View;
  *
  * @author Ricardo
  */
-abstract class BaseViewGrid extends \Faderim\Ext\GridPanel
-{
+abstract class BaseViewGrid extends \Faderim\Ext\GridPanel {
 
-    final public function __construct()
-    {
-        parent::__construct($this->getPageName().'-grid');
+    final public function __construct() {
+        parent::__construct($this->getPageName() . '-grid');
         $this->createComponents();
-        $this->getStore()->setUrl('?p='.$this->getPageName().'&a=grid&pr=renderData');
+        $this->getStore()->setUrl('?p=' . $this->getPageName() . '&a=grid&pr=renderData');
     }
 
     abstract protected function getPageName();
 
     abstract protected function createComponents();
-
 }
 

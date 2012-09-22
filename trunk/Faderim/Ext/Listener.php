@@ -41,5 +41,3 @@ class Listener implements \Faderim\Json\JsonSerializable
         */
    }
 }
-
-

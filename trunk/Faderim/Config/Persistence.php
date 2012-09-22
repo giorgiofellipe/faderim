@@ -30,4 +30,3 @@ class Persistence extends BaseEngine
         \Faderim\Core\Engine::getInstance()->addConnection($sCnxName,$oCnx,$bDefault);
     }
 }
-

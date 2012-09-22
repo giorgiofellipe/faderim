@@ -8,7 +8,7 @@ class XPath {
     private $XPath;
 
     /**
-    * Construtor, é necessário informa qual o Documento XML que está se fazendo a análise
+    * Construtor, Ã© necessÃ¡rio informa qual o Documento XML que estÃ£o se fazendo a anÃ¡lise
     *
     * @param DOMDocument $oXml Documento XML
     * @return XPathReader
@@ -19,10 +19,10 @@ class XPath {
 
     /**
     * Executa uma query sobre o Nosso documento XML.
-    * A estrutura de query segue o padrão XPath (seleção e predicado)
+    * A estrutura de query segue o padrÃ£o XPath (seleÃ§Ã£o e predicado)
     *
     * @param String $sQuery Query a ser executada
-    * @param mixed $oBase Nó base para a query
+    * @param mixed $oBase NÃ³ base para a query
     * @return DOMNodeList
     */
     public function query($sQuery,$oBase = false) {
@@ -35,7 +35,7 @@ class XPath {
     }
 
     /**
-    * Executa uma função agregada em cima do documento XML
+    * Executa uma funÃ§Ã£o em cima do documento XML
     *
     * @param String $sQuery Query a ser executada
     * @return mixed
@@ -56,7 +56,7 @@ class XPath {
     }
 
     /**
-    * Executa uma query e retorna o valor do primeiro elemento, seja ele um nó ou atributo
+    * Executa uma query e retorna o valor do primeiro elemento, seja ele um nï¿½ ou atributo
     *
     * @param mixed $sQuery
     * @param mixed $oBase
@@ -77,4 +77,3 @@ class XPath {
         return $aText;
     }
 }
-?>

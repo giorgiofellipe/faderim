@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Model;
 
 /*
@@ -12,8 +13,8 @@ namespace Faderim\Framework\Model;
  * @author Ricardo
  * @table faderim_action_page
  */
-class ActionPage extends BaseModel
-{
+class ActionPage extends BaseModel {
+
     /**
      * @id true
      * @Join Action
@@ -26,41 +27,36 @@ class ActionPage extends BaseModel
      */
     protected $Page;
 
-
-    public function getAction()
-    {
+    public function getAction() {
         return $this->getJoin('Action');
     }
 
-    public function getPage()
-    {
+    public function getPage() {
         return $this->getJoin('Page');
     }
 
-
     public function getControllerName() {
-        return $this->getPageClassName('Controller',$this->getAction()->getName());
+        return $this->getPageClassName('Controller', $this->getAction()->getName());
     }
 
     public function getViewName($aditional = '') {
-        return $this->getPageClassName('View',$aditional);
+        return $this->getPageClassName('View', $aditional);
     }
 
     public function getModelName($aditional = '') {
-        return $this->getPageClassName('Model',$aditional);
+        return $this->getPageClassName('Model', $aditional);
     }
 
-    public function getPageClassName($sType,$aditional='') {
-        return $this->getPage()->getSystem()->getPackage().'\\'.$sType.'\\'.ucfirst($this->getPage()->getName()).  ucfirst($aditional);
+    public function getPageClassName($sType, $aditional = '') {
+        return $this->getPage()->getSystem()->getPackage() . '\\' . $sType . '\\' . ucfirst($this->getPage()->getName()) . ucfirst($aditional);
     }
 
     public function getControllerDefaultForAction() {
-         if( 'grid' == $this->getAction()->getName() )  {
-             return 'Faderim\\Framework\\Controller\\BasicGrid';
-         }
-         else {
-             throw new \Exception('No default Controller defined for '.$this->getAction()->getName());
-         }
+        if ('grid' == $this->getAction()->getName()) {
+            return 'Faderim\\Framework\\Controller\\BasicGrid';
+        } else {
+            throw new \Exception('No default Controller defined for ' . $this->getAction()->getName());
+        }
     }
 
 }

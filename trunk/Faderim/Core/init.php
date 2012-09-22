@@ -54,11 +54,11 @@ class Init
                     $bClassExist = true;
                 }
                 else {
-                    throw new Exception('Classe '.$sNovoNome.' não existe no arquivo '.$sFileName);
+                    throw new Exception('Classe '.$sNovoNome.' nï¿½o existe no arquivo '.$sFileName);
                 }
             }
             else {
-                throw new Exception('Não foi possível incluir o arquivo '.$sFileName);
+                throw new Exception('Nï¿½o foi possï¿½vel incluir o arquivo '.$sFileName);
             }
         }
         if($bClassExist) {
@@ -99,9 +99,9 @@ class Init
     {
         $aErros = Array(E_WARNING => 'Perigo',
                         E_NOTICE => 'Noticia',
-                        E_USER_ERROR=> 'Erro do Usuário',
-                        E_USER_WARNING=> 'Perigo do Usuário',
-                        E_USER_NOTICE=> 'Notícia do Usuário',
+                        E_USER_ERROR=> 'Erro do Usuï¿½rio',
+                        E_USER_WARNING=> 'Perigo do Usuï¿½rio',
+                        E_USER_NOTICE=> 'Notï¿½cia do Usuï¿½rio',
                         E_STRICT=> 'Strict',
                         E_RECOVERABLE_ERROR=>'Recoverable Error');
         echo('<b>['.$aErros[$iErroNumber].']</b> '.$sErro.
@@ -135,5 +135,3 @@ class Init
         return ($bFirstMaiuscula) ? $sConvert = ucfirst($sConvert) : $sConvert;
     }
 }
-
-?>

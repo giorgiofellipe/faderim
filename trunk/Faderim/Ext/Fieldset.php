@@ -23,5 +23,3 @@ class Fieldset extends Container {
     }
     
 }
-
-?>

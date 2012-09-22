@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Model;
 
 /*
@@ -12,38 +13,37 @@ namespace Faderim\Framework\Model;
  * @author Ricardo
  * @table faderim_page
  */
-class Page extends BaseModel
-{
+class Page extends BaseModel {
+
     /**
      * @join System
      */
     protected $System;
+
     /**
      * @id true
      * @colname page_name
      */
-    protected $name;    
-    
+    protected $name;
+
     /**
      *
-     * @colname page_title 
+     * @colname page_title
      */
     protected $title;
-    
-    
-    
+
     public function getSystem() {
         return $this->getJoin('System');
     }
-    
+
     public function setName($name) {
         $this->name = $name;
     }
-    
+
     public function getName() {
         return $this->name;
     }
-    
+
     public function getTitle() {
         return $this->title;
     }
@@ -51,7 +51,6 @@ class Page extends BaseModel
     public function setTitle($title) {
         $this->title = $title;
     }
-
 
 }
 

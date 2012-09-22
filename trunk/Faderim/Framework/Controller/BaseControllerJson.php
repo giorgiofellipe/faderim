@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Controller;
 
 /**
@@ -6,16 +7,15 @@ namespace Faderim\Framework\Controller;
  */
 abstract class BaseControllerJson extends BaseController {
 
-     protected $jsonReturn = null;
+    protected $jsonReturn = null;
 
-     public function render()
-     {
-         header('Content-type:text/json');
-         echo \Faderim\Json\Json::encode($this->jsonReturn);
-     }
+    public function render() {
+        header('Content-type:text/json');
+        echo \Faderim\Json\Json::encode($this->jsonReturn);
+    }
 
-     protected function setJsonReturn($mixed) {
-         $this->jsonReturn = $mixed;
-     }
+    protected function setJsonReturn($mixed) {
+        $this->jsonReturn = $mixed;
+    }
 
 }

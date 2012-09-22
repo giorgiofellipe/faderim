@@ -1,9 +1,12 @@
 <?php
+
 namespace Faderim\Reflection;
+
 class ParseAnotation {
+
     /**
-    * @var Reflector
-    */
+     * @var Reflector
+     */
     protected $Reflector;
     private $doc;
 
@@ -20,17 +23,11 @@ class ParseAnotation {
         return $this->doc;
     }
 
-
-    protected function parseAnotation($sAnnotationName,$bDefault = false) {
-        if(preg_match('/\@'.$sAnnotationName.' (.+)/i',$this->getDoc(),$aMatch)) {
+    protected function parseAnotation($sAnnotationName, $bDefault = false) {
+        if (preg_match('/\@' . $sAnnotationName . ' (.+)/i', $this->getDoc(), $aMatch)) {
             return trim($aMatch[1]);
         }
         return $bDefault;
     }
+
 }
-
-
-
-    //abstract function getAnnotations();
-
-?>

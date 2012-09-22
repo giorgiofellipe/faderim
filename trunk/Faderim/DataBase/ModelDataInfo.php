@@ -1,10 +1,12 @@
 <?php
+
 namespace Faderim\DataBase;
-class ModelDataInfo extends ModelDataBase
-{
+
+class ModelDataInfo extends ModelDataBase {
+
     private $colName;
 
-    public function __construct($colname,$modelName,$id = false) {
+    public function __construct($colname, $modelName, $id = false) {
         parent::__construct($modelName, $id);
         $this->setColName($colname);
     }
@@ -16,6 +18,5 @@ class ModelDataInfo extends ModelDataBase
     public function getColName() {
         return $this->colName;
     }
-
 
 }

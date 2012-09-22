@@ -1,9 +1,8 @@
 <?php
+
 namespace Faderim\DataBase;
 
-
-abstract class BaseConnection
-{
+abstract class BaseConnection {
 
     private $host;
     private $port;
@@ -11,86 +10,74 @@ abstract class BaseConnection
     private $password;
     private $database;
 
-    public function __construct($sServidor, $iPorta, $sUsuario, $sSenha, $sBanco, $bConecta = false)
-    {
+    public function __construct($sServidor, $iPorta, $sUsuario, $sSenha, $sBanco, $bConecta = false) {
         $this->setHost($sServidor);
         $this->setPort($iPorta);
         $this->setUser($sUsuario);
         $this->setPassword($sSenha);
         $this->setDatabase($sBanco);
-        if($bConecta) {
+        if ($bConecta) {
             $this->open();
         }
     }
 
-    static public function factory($sType,$sServidor,$iPorta,$sUsuario,$sSenha,$sBanco,$bConecta = false)
-    {
-        $sClass = __NAMESPACE__.'\\'.$sType.'Connection';
-        return new $sClass($sServidor,$iPorta,$sUsuario,$sSenha,$sBanco,$bConecta);
+    static public function factory($sType, $sServidor, $iPorta, $sUsuario, $sSenha, $sBanco, $bConecta = false) {
+        $sClass = __NAMESPACE__ . '\\' . $sType . 'Connection';
+        return new $sClass($sServidor, $iPorta, $sUsuario, $sSenha, $sBanco, $bConecta);
     }
 
     abstract public function open();
+
     abstract public function isOpened();
+
     abstract public function close();
 
-
-    protected function afterConnect()
-    {
-
+    protected function afterConnect() {
+        
     }
 
-    public function setHost($host)
-    {
+    public function setHost($host) {
         $this->host = $host;
     }
 
-    public function setPort($port)
-    {
+    public function setPort($port) {
         $this->port = $port;
     }
 
-    public function setUser($user)
-    {
+    public function setUser($user) {
         $this->user = $user;
     }
 
-    public function setPassword($pass)
-    {
+    public function setPassword($pass) {
         $this->password = $pass;
     }
 
-    public function setDatabase($database)
-    {
+    public function setDatabase($database) {
         $this->database = $database;
     }
 
-    public function getHost()
-    {
+    public function getHost() {
         return $this->host;
     }
 
-    public function getPort()
-    {
+    public function getPort() {
         return $this->port;
     }
 
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
 
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
-    public function getDatabase()
-    {
+    public function getDatabase() {
         return $this->database;
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
         $this->close();
     }
+
 }

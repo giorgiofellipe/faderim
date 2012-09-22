@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext;
 
 /*
@@ -11,31 +12,26 @@ namespace Faderim\Ext;
  *
  * @author Ricardo
  */
-class EventListener implements \Faderim\Json\JsonSerializable
-{
+class EventListener implements \Faderim\Json\JsonSerializable {
+
     private $functionName;
     private $params;
-    public function __construct($args)
-    {
+
+    public function __construct($args) {
         $this->functionName = array_shift($args);
         $aParams = Array();
-        foreach($args as $argAtual) {
-            if($argAtual instanceof Component) {
-                
+        foreach ($args as $argAtual) {
+            if ($argAtual instanceof Component) {
+
+            } else {
+                $aParams[] = \Faderim\Json\Json::encode($argAtual);
             }
-            else {
-                $aParams[] = \Faderim\Json\Json::encode($argAtual);                
-            }
-            
         }
-        $this->params = '['.implode(',',$aParams).']';
+        $this->params = '[' . implode(',', $aParams) . ']';
     }
-    
-    
-   public function getJsonFormat()
-   {
-       return "function(obj) { console.log('obj',obj); console.log('this',this);  return ".$this->functionName.".apply(this,".$this->params.");}";           
-   }
+
+    public function getJsonFormat() {
+        return "function(obj) { console.log('obj',obj); console.log('this',this);"
+              ."return " . $this->functionName . ".apply(this," . $this->params . ");}";
+    }
 }
-
-

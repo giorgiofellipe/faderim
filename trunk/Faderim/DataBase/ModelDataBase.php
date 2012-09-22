@@ -1,15 +1,16 @@
 <?php
+
 namespace Faderim\DataBase;
-abstract class ModelDataBase
-{
+
+abstract class ModelDataBase {
+
     private $modelName;
     private $id;
 
-    public function __construct($modelName,$id = false) {
+    public function __construct($modelName, $id = false) {
         $this->setModelName($modelName);
         $this->setIsId($id);
     }
-
 
     public function setModelName($modelName) {
         $this->modelName = $modelName;
@@ -22,8 +23,9 @@ abstract class ModelDataBase
     public function setIsId($id) {
         $this->id = $id;
     }
-    
+
     public function isId() {
         return (bool) $this->id;
     }
+
 }

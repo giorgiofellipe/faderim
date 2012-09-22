@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Controller;
 
 /**
@@ -6,24 +7,22 @@ namespace Faderim\Framework\Controller;
  *
  * @author Ricardo
  */
-abstract class BaseController
-{
+abstract class BaseController {
+
     protected $View;
+
     /**
      *
-     * @var \Faderim\Framework\Model\BasicPage 
+     * @var \Faderim\Framework\Model\BasicPage
      */
     protected $Page;
-    
-    public function __construct(\Faderim\Framework\Model\ActionPage $Page)
-    {
+
+    public function __construct(\Faderim\Framework\Model\ActionPage $Page) {
         $this->Page = $Page;
         $this->View = $this->getView();
-
     }
-    
-    abstract public function render();
-    
-    abstract protected function getView();
 
+    abstract public function render();
+
+    abstract protected function getView();
 }

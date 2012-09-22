@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext;
 
 /**
@@ -6,16 +7,16 @@ namespace Faderim\Ext;
  *
  * @author Ricardo
  */
-class ComponentLoader extends Component
-{
+class ComponentLoader extends Component {
 
     public function getExtClassName() {
         return 'Ext.ComponentLoader';
     }
 
-    public function setAutoLoad($xPropValue,$sUrl) {
+    public function setAutoLoad($xPropValue, $sUrl) {
         $this->setProperty('autoLoad', (bool) $xPropValue);
         $this->setProperty('url', $sUrl);
         $this->setProperty('renderer', 'component');
     }
+
 }

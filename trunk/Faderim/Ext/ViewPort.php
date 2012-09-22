@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext;
 
 /**
@@ -6,14 +7,11 @@ namespace Faderim\Ext;
  *
  * @author Ricardo
  */
-class ViewPort extends Container
-{
+class ViewPort extends Container {
 
-    
-    protected function getExtClassName()
-    {
+    protected function getExtClassName() {
         return 'Viewport';
     }
-    //put your code here
+
 }
 

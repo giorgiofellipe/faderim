@@ -16,4 +16,3 @@ abstract class BaseEngine
     abstract protected function parseXpath(\Faderim\Reader\XPath $xPath);
 
 }
-?>

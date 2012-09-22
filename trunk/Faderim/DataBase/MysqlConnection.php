@@ -1,6 +1,9 @@
 <?php
+
 namespace Faderim\DataBase;
+
 class MysqlConnection extends RelationalConnection {
+
     const FUNCTION_LAST_ERROR = 'mysql_error';
 
     protected function getPrefixFunctionCnx() {
@@ -8,13 +11,14 @@ class MysqlConnection extends RelationalConnection {
     }
 
     protected function getArrayParamConnect() {
-        $sHost = $this->getHost().':'.$this->getPort();
-        return Array($sHost,$this->getUser(),$this->getPassword());
+        $sHost = $this->getHost() . ':' . $this->getPort();
+        return Array($sHost, $this->getUser(), $this->getPassword());
     }
 
     protected function afterConnect() {
-        if(!mysql_select_db($this->getDatabase(), $this->getResource())) {
-            throw new Exception('Não foi possível setar o banco de dados '.$this->getDatabase());
+        if (!mysql_select_db($this->getDatabase(), $this->getResource())) {
+            throw new Exception('Nï¿½o foi possï¿½vel setar o banco de dados ' . $this->getDatabase());
         }
     }
+
 }

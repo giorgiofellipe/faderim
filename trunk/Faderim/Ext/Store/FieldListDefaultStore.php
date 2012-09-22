@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext\Store;
 
 /*
@@ -12,16 +13,14 @@ namespace Faderim\Ext\Store;
  * @author Rick
  */
 class FieldListDefaultStore extends ArrayStore {
-    
+
     function __construct() {
         $this->addField(new \Faderim\Ext\Field\TypeFieldText('val'));
         $this->addField(new \Faderim\Ext\Field\TypeFieldText('name'));
     }
-    
-    public function addOption($optionValue,$optionDescr) {
-       $this->addRow(Array($optionValue,$optionDescr)); 
-    }
-    
-}
 
-?>
+    public function addOption($optionValue, $optionDescr) {
+        $this->addRow(Array($optionValue, $optionDescr));
+    }
+
+}

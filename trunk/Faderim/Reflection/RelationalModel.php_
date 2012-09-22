@@ -1,14 +1,16 @@
 <?php
+
 namespace Faderim\Reflection;
-class RelationalModel
-{
+
+class RelationalModel {
 
     private $table;
     private $package;
     private $connection;
+
     /**
-    * @var ReflectionPropertyAnotation[]
-    */
+     * @var ReflectionPropertyAnotation[]
+     */
     private $aCols = Array();
 
     public function __construct(\Faderim\Core\BaseModel $oModel) {
@@ -18,9 +20,8 @@ class RelationalModel
         $this->setInstance($oModel);
     }
 
-
     public function getAnnotations() {
-        return Array('table','package','connection');
+        return Array('table', 'package', 'connection');
     }
 
     public function setPackage($package) {
@@ -39,9 +40,8 @@ class RelationalModel
         return $this->connection;
     }
 
-
     private function parseCols($aProperties) {
-        foreach($aProperties as $propertiAtual) {
+        foreach ($aProperties as $propertiAtual) {
             $this->aCols[] = new FaderimReflectionPropertyAnotation($propertiAtual);
         }
     }
@@ -52,7 +52,7 @@ class RelationalModel
 
     public function getColsName() {
         $aCols = Array();
-        foreach($this->getCols() as $colAtual) {
+        foreach ($this->getCols() as $colAtual) {
             $aCols[] = $colAtual->getColname();
         }
         return $aCols;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\View;
 
 /**
@@ -6,10 +7,7 @@ namespace Faderim\Framework\View;
  *
  * @author Ricardo
  */
-abstract class BaseView
-{
-    
-    abstract public function show();
-    
+abstract class BaseView {
 
+    abstract public function show();
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext;
 
 /**
@@ -6,16 +7,11 @@ namespace Faderim\Ext;
  *
  * @author Ricardo
  */
-class TabPanel extends Panel
-{
-    
-    protected function getExtClassName()
-    {
+class TabPanel extends Panel {
+
+    protected function getExtClassName() {
         return 'TabPanel';
     }
 
-   
-    
-  
 }
 

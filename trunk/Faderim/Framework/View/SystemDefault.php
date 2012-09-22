@@ -13,8 +13,9 @@ namespace Faderim\Framework\View;
  * @author Rick
  */
 class SystemDefault extends \Faderim\Ext\Container {
+
     //put your code here
-    
+
     function __construct() {
         parent::__construct('SystemContainer');
         $this->setTitle('System');
@@ -28,4 +29,5 @@ class SystemDefault extends \Faderim\Ext\Container {
         $oForm->setCollapsible(true);
         $oForm->setSplit(true);
     }
+
 }

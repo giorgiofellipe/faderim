@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Framework\Model;
 
 /*
@@ -12,26 +13,22 @@ namespace Faderim\Framework\Model;
  * @author Ricardo
  * @table faderim_action
  */
-class Action extends BaseModel
-{
+class Action extends BaseModel {
+
     /**
      *
      * @colname action_name
-     * @id true 
+     * @id true
      */
     private $name;
-    
-    public function getName()     {
+
+    public function getName() {
         return $this->name;
     }
 
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
     }
-    
-    
-
 
 }
 

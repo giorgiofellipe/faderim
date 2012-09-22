@@ -3,6 +3,7 @@ namespace Faderim\Config;
 class EngineStart extends BaseEngine
 {
     const XPATH_AUTOLOAD = '//config/autoload';
+    const FILE_CONFIG = 'startup.xml';
 
     protected function parseXpath(\Faderim\Reader\XPath $xPath) {
         $aValues = $xPath->queryAllValue(self::XPATH_AUTOLOAD);
@@ -12,11 +13,10 @@ class EngineStart extends BaseEngine
     }
 
     protected function startGroup($sNome) {       
-        $oGroup = new Group($sNome);
+        new Group($sNome);
     }
 
     protected function getFileConfig() {
-        return 'startup.xml';
+        return self::FILE_CONFIG;
     }
-
 }

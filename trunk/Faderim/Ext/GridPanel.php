@@ -1,4 +1,5 @@
 <?php
+
 namespace Faderim\Ext;
 
 /**
@@ -6,32 +7,29 @@ namespace Faderim\Ext;
  *
  * @author Ricardo
  */
-class GridPanel extends Panel
-{
-    protected $itemsProp=  "columns";   
+class GridPanel extends Panel {
+
+    protected $itemsProp = "columns";
+
     /**
      * @var Store\JsonStore 
      */
     private $Store;
 
-
-    protected function getExtClassName()
-    {
+    protected function getExtClassName() {
         return 'Ext.grid.Panel';
     }
-    
-    public function addChild($Child)
-    {
+
+    public function addChild($Child) {
         parent::addChild($Child);
-        $this->Store->addField($Child->getTypeField());        
+        $this->Store->addField($Child->getTypeField());
     }
 
-    protected function setDefaultProperties()
-    {        
-        $this->Store = new Store\JsonStore(); 
-        $this->setProperty('store', $this->Store);  
+    protected function setDefaultProperties() {
+        $this->Store = new Store\JsonStore();
+        $this->setProperty('store', $this->Store);
     }
-    
+
     public function getStore() {
         return $this->Store;
     }

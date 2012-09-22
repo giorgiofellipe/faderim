@@ -1,5 +1,7 @@
 <?php
+
 namespace Faderim\Json;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,8 +11,8 @@ namespace Faderim\Json;
  *
  * @author Ricardo
  */
-interface JsonSerializable
-{
+interface JsonSerializable {
+
     public function getJsonFormat();
 }
 

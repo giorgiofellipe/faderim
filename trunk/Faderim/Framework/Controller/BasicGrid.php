@@ -1,5 +1,7 @@
 <?php
+
 namespace Faderim\Framework\Controller;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,8 +12,8 @@ namespace Faderim\Framework\Controller;
  *
  * @author Ricardo
  */
-class BasicGrid extends BaseControllerJson
-{
+class BasicGrid extends BaseControllerJson {
+
     //put your code here
     private $data = Array();
 
@@ -20,10 +22,10 @@ class BasicGrid extends BaseControllerJson
     }
 
     public function renderData() {
-        $sModel = '\\'.$this->Page->getModelName();
+        $sModel = '\\' . $this->Page->getModelName();
         $oModel = new $sModel();
         $aModels = $oModel->getStorage()->find();
-        foreach($aModels as $ModelKey) {
+        foreach ($aModels as $ModelKey) {
             $this->addData($ModelKey);
         }
         $this->setJsonReturn($this->data);
@@ -32,20 +34,16 @@ class BasicGrid extends BaseControllerJson
     private function addData(\Faderim\Framework\Model\BaseModel $oData) {
         $aDataAtual = Array();
         $oStore = $this->View->getStore();
-        foreach($oStore->getFields() as $oField) {
+        foreach ($oStore->getFields() as $oField) {
             $sProp = $oField->getName();
             $aDataAtual[$sProp] = $oData->beanGetProperty($sProp);
         }
         $this->data[] = $aDataAtual;
     }
 
-
-
-
-
-
     public function getView() {
-        $sViewName = '\\'.$this->Page->getViewName('Grid');
+        $sViewName = '\\' . $this->Page->getViewName('Grid');
         return new $sViewName();
     }
+
 }
