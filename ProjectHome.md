@@ -1,0 +1,3 @@
+Faderim: É um framework para PHP com o objetivo de agilizar o processo de desenvolvimento de softwares web. O Faderim utiliza algumas bibliotecas já consagradas no mercado dentre elas: [Doctrine2](http://www.doctrine-project.org), [Twig](http://twig.sensiolabs.org) e [ExtJS](http://www.sencha.com/products/extjs).
+O framework pode ser aplicável tanto em desenvolvimento de sites, como também para sistemas gerenciais, utilizando sempre de Orientação a Objetos para um maior aproveitamento do código.
+Atualmente estamos em versão beta. Junte-se a equipe
